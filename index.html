@@ -18,22 +18,12 @@
 
   <style>
     :root {
-
-      /*
-       * Series Organizer+
-       *
-       * Inspired by the old Series Organizer / Konon-era palette:
-       * dark workspace, grey surfaces, white text and orange highlights.
-       */
-
       --bg: #111312;
       --bg-soft: #171918;
 
       --surface: #232524;
       --surface-2: #2c2f2d;
       --surface-3: #3a3c3a;
-
-      --old-grey: #868784;
 
       --text: #f4f4f1;
       --text-soft: #d6d7d3;
@@ -163,8 +153,6 @@
 
 
     .brand-mark {
-      position: relative;
-
       width: 44px;
       height: 44px;
 
@@ -185,9 +173,6 @@
         1px solid rgba(255, 255, 255, 0.14);
 
       font-weight: 900;
-
-      letter-spacing:
-        -0.04em;
     }
 
 
@@ -235,6 +220,45 @@
 
     nav a:hover {
       color: var(--orange);
+    }
+
+
+    /*
+     * LEGACY COLOR STRIP
+     */
+
+    .legacy-strip {
+      display: grid;
+
+      grid-template-columns:
+        repeat(5, 1fr);
+
+      height: 4px;
+    }
+
+
+    .legacy-strip span:nth-child(1) {
+      background: var(--green);
+    }
+
+
+    .legacy-strip span:nth-child(2) {
+      background: var(--red);
+    }
+
+
+    .legacy-strip span:nth-child(3) {
+      background: var(--orange);
+    }
+
+
+    .legacy-strip span:nth-child(4) {
+      background: var(--purple);
+    }
+
+
+    .legacy-strip span:nth-child(5) {
+      background: var(--blue);
     }
 
 
@@ -432,8 +456,7 @@
 
       transition:
         transform 150ms ease,
-        border-color 150ms ease,
-        background 150ms ease;
+        border-color 150ms ease;
     }
 
 
@@ -467,46 +490,7 @@
 
 
     /*
-     * OLD-SO COLOR STRIP
-     */
-
-    .legacy-strip {
-      display: grid;
-
-      grid-template-columns:
-        repeat(5, 1fr);
-
-      height: 4px;
-    }
-
-
-    .legacy-strip span:nth-child(1) {
-      background: var(--green);
-    }
-
-
-    .legacy-strip span:nth-child(2) {
-      background: var(--red);
-    }
-
-
-    .legacy-strip span:nth-child(3) {
-      background: var(--orange);
-    }
-
-
-    .legacy-strip span:nth-child(4) {
-      background: var(--purple);
-    }
-
-
-    .legacy-strip span:nth-child(5) {
-      background: var(--blue);
-    }
-
-
-    /*
-     * GENERAL SECTIONS
+     * SECTIONS
      */
 
     .section {
@@ -518,7 +502,10 @@
     }
 
 
-    .section-label {
+    .section-label,
+    .history-version {
+      display: block;
+
       margin:
         0 0 17px;
 
@@ -587,7 +574,7 @@
 
 
     /*
-     * PRODUCT SECTIONS
+     * PRODUCT
      */
 
     .product-layout {
@@ -677,7 +664,7 @@
 
 
     /*
-     * PHONE / SCREENSHOT
+     * PHONE
      */
 
     .phone {
@@ -707,28 +694,6 @@
       box-shadow:
         0 35px 90px
         rgba(0, 0, 0, 0.42);
-    }
-
-
-    .phone::before {
-      content: "";
-
-      position: absolute;
-
-      inset:
-        15% -25% -15%;
-
-      z-index: -1;
-
-      background:
-        radial-gradient(
-          circle,
-          rgba(242, 138, 0, 0.12),
-          transparent 65%
-        );
-
-      filter:
-        blur(38px);
     }
 
 
@@ -932,12 +897,10 @@
 
 
     /*
-     * LEGACY / HISTORY
+     * HISTORY
      */
 
     .history-section {
-      position: relative;
-
       background:
         #0d0f0e;
     }
@@ -946,7 +909,7 @@
     .history-intro {
       max-width: 780px;
 
-      margin-bottom: 65px;
+      margin-bottom: 45px;
     }
 
 
@@ -967,101 +930,273 @@
     }
 
 
-    .timeline {
-      position: relative;
-
-      display: grid;
-
-      gap: 0;
-
-      max-width: 850px;
+    .history-evolution {
+      margin-top: 65px;
     }
 
 
-    .timeline::before {
-      content: "";
+    .history-generation {
+      display: grid;
+
+      grid-template-columns:
+        minmax(260px, 0.8fr)
+        minmax(0, 1.45fr);
+
+      gap: 60px;
+
+      align-items: center;
+
+      padding:
+        72px 0;
+
+      border-top:
+        1px solid var(--border);
+    }
+
+
+    .history-generation-reverse {
+      grid-template-columns:
+        minmax(0, 1.45fr)
+        minmax(260px, 0.8fr);
+    }
+
+
+    .history-generation-reverse
+    .history-copy {
+      order: 2;
+    }
+
+
+    .history-generation-reverse
+    .history-screenshot {
+      order: 1;
+    }
+
+
+    .history-copy h3 {
+      margin:
+        0 0 18px;
+
+      font-size:
+        clamp(
+          1.7rem,
+          3vw,
+          2.4rem
+        );
+
+      line-height: 1.1;
+    }
+
+
+    .history-copy p {
+      margin:
+        0 0 15px;
+    }
+
+
+    .history-emphasis {
+      color: var(--text) !important;
+
+      font-size: 1.15rem;
+
+      font-weight: 700;
+    }
+
+
+    /*
+     * HISTORY IMAGES
+     */
+
+    .history-screenshot {
+      margin: 0;
+    }
+
+
+    .history-window {
+      position: relative;
+
+      padding: 7px;
+
+      overflow: hidden;
+
+      border:
+        1px solid rgba(255, 255, 255, 0.13);
+
+      border-radius: 12px;
+
+      background:
+        #1c1e1d;
+
+      box-shadow:
+        0 28px 70px
+        rgba(0, 0, 0, 0.42);
+    }
+
+
+    .history-window::before {
+      content: "ARCHIVE";
 
       position: absolute;
 
-      left: 10px;
+      z-index: 2;
 
-      top: 16px;
-      bottom: 16px;
+      top: 17px;
+      left: 17px;
 
-      width: 1px;
+      padding:
+        5px 9px;
+
+      border-radius: 5px;
+
+      background:
+        rgba(0, 0, 0, 0.74);
+
+      color: var(--orange);
+
+      font-size: 0.62rem;
+
+      font-weight: 800;
+
+      letter-spacing: 0.13em;
+    }
+
+
+    .history-window img {
+      width: 100%;
+
+      display: block;
+
+      border-radius: 6px;
+    }
+
+
+    .history-screenshot figcaption,
+    .then-now figcaption {
+      margin-top: 10px;
+
+      color: var(--muted);
+
+      font-size: 0.78rem;
+
+      text-align: center;
+    }
+
+
+    /*
+     * THEN / NOW
+     */
+
+    .then-now {
+      margin-top: 110px;
+
+      padding:
+        60px;
+
+      border:
+        1px solid rgba(242, 138, 0, 0.18);
+
+      border-radius:
+        var(--radius-large);
 
       background:
         linear-gradient(
-          var(--orange),
-          var(--old-grey)
+          145deg,
+          rgba(242, 138, 0, 0.055),
+          var(--surface)
         );
     }
 
 
-    .timeline-item {
-      position: relative;
+    .then-now-heading {
+      margin-bottom: 45px;
 
-      padding:
-        0 0 45px 52px;
+      text-align: center;
     }
 
 
-    .timeline-item:last-child {
-      padding-bottom: 0;
+    .then-now-heading h3 {
+      margin: 0;
+
+      font-size:
+        clamp(
+          2rem,
+          4vw,
+          3rem
+        );
     }
 
 
-    .timeline-dot {
-      position: absolute;
+    .then-now-grid {
+      display: grid;
 
-      left: 4px;
-      top: 8px;
+      grid-template-columns:
+        minmax(0, 1.5fr)
+        auto
+        minmax(180px, 0.55fr);
 
-      width: 13px;
-      height: 13px;
+      gap: 32px;
 
-      border:
-        3px solid
-        var(--bg);
-
-      border-radius: 50%;
-
-      background:
-        var(--orange);
-
-      box-shadow:
-        0 0 0 1px
-        var(--orange);
+      align-items: center;
     }
 
 
-    .timeline-year {
+    .then-now-grid figure {
+      margin: 0;
+    }
+
+
+    .then-now-arrow {
       color: var(--orange);
 
-      font-size: 0.78rem;
+      font-size: 2rem;
 
-      font-weight: 800;
-
-      letter-spacing:
-        0.12em;
-
-      text-transform:
-        uppercase;
+      font-weight: 700;
     }
 
 
-    .timeline h3 {
+    .current-phone {
+      max-width: 250px;
+
+      margin: 0 auto;
+
+      padding: 6px;
+
+      border:
+        1px solid rgba(255, 255, 255, 0.14);
+
+      border-radius: 25px;
+
+      background:
+        linear-gradient(
+          145deg,
+          #363835,
+          #191b1a
+        );
+
+      box-shadow:
+        0 25px 65px
+        rgba(0, 0, 0, 0.45);
+    }
+
+
+    .current-phone img {
+      display: block;
+
+      width: 100%;
+
+      border-radius: 19px;
+    }
+
+
+    .then-now-copy {
+      max-width: 650px;
+
       margin:
-        4px 0 8px;
+        45px auto 0;
 
-      font-size: 1.35rem;
-    }
+      text-align: center;
 
-
-    .timeline p {
-      max-width: 660px;
-
-      margin: 0;
+      font-size: 1.05rem;
     }
 
 
@@ -1165,10 +1300,10 @@
 
 
     /*
-     * MOBILE
+     * RESPONSIVE
      */
 
-    @media (max-width: 820px) {
+    @media (max-width: 850px) {
 
       nav {
         display: none;
@@ -1177,12 +1312,6 @@
 
       .hero {
         min-height: 650px;
-      }
-
-
-      .hero-content {
-        padding:
-          85px 0;
       }
 
 
@@ -1209,15 +1338,48 @@
       }
 
 
+      .history-generation,
+      .history-generation-reverse {
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+      }
+
+
+      .history-generation-reverse
+      .history-copy,
+      .history-generation-reverse
+      .history-screenshot {
+        order: initial;
+      }
+
+
       .showcase-grid {
-        grid-template-columns:
-          1fr;
+        grid-template-columns: 1fr;
       }
 
 
       .development-grid {
-        grid-template-columns:
-          1fr;
+        grid-template-columns: 1fr;
+      }
+
+
+      .then-now {
+        padding:
+          35px 22px;
+      }
+
+
+      .then-now-grid {
+        grid-template-columns: 1fr;
+      }
+
+
+      .then-now-arrow {
+        transform:
+          rotate(90deg);
+
+        text-align: center;
       }
 
     }
@@ -1271,13 +1433,10 @@
 
     }
   </style>
-
 </head>
 
 
 <body>
-
-  <!-- HEADER -->
 
   <header class="site-header">
 
@@ -1397,7 +1556,7 @@
 
         <p>
           Series Organizer+ takes that idea much further:
-          movies and television together, richer tracking,
+          Movies and TV together, richer tracking,
           discovery, streaming availability, cast and media,
           notifications and optional cloud backup.
         </p>
@@ -1513,7 +1672,7 @@
     </section>
 
 
-    <!-- FEATURE GRID -->
+    <!-- FEATURES -->
 
     <section class="section">
 
@@ -1544,7 +1703,7 @@
               ▶
             </div>
 
-            <h3>Episodes & progress</h3>
+            <h3>Episodes &amp; progress</h3>
 
             <p>
               Follow seasons and episodes, jump between episodes
@@ -1560,7 +1719,7 @@
               ◎
             </div>
 
-            <h3>Cast & people</h3>
+            <h3>Cast &amp; people</h3>
 
             <p>
               Explore actors, Known For titles, biographies and
@@ -1576,7 +1735,7 @@
               ▣
             </div>
 
-            <h3>Artwork & media</h3>
+            <h3>Artwork &amp; media</h3>
 
             <p>
               Browse posters, backdrops, logos and videos,
@@ -1608,7 +1767,9 @@
               +
             </div>
 
-            <h3>And this is still only the beginning.</h3>
+            <h3>
+              And this is still only the beginning.
+            </h3>
 
             <p>
               Series Organizer+ is being actively developed.
@@ -1625,7 +1786,7 @@
     </section>
 
 
-    <!-- DETAILS SHOWCASE -->
+    <!-- DETAILS -->
 
     <section class="section">
 
@@ -1787,111 +1948,329 @@
 
 
           <p>
-            The very first "Series Organizer" was effectively
-            a personal TVShows.txt file. From there came a tiny
-            home-made tracker, then episode data, online databases,
-            artwork, actors, Specials, themes, RSS and years of
-            experimentation.
+            The first solution was little more than TVShows.txt.
+            Then that text file turned into an application.
+            And that application kept growing.
           </p>
 
         </div>
 
 
-        <div class="timeline">
+        <div class="history-evolution">
 
-          <article class="timeline-item">
+          <!-- V1 -->
 
-            <span class="timeline-dot"></span>
+          <article class="history-generation">
 
-            <span class="timeline-year">
-              THE BEGINNING
-            </span>
+            <div class="history-copy">
 
-            <h3>TVShows.txt</h3>
+              <span class="history-version">
+                SERIES ORGANIZER 1
+              </span>
 
-            <p>
-              A simple text file kept track of seasons and episodes.
-              It solved the problem — until the list became too large
-              and a developer decided a text file wasn't enough.
-            </p>
+              <h3>
+                From a text file to an application.
+              </h3>
 
-          </article>
+              <p>
+                The first Series Organizer was intentionally simple:
+                shows, seasons, episodes and a way to remember
+                where you had stopped.
+              </p>
 
+              <p>
+                It wasn't pretty. It didn't need to be.
+                It solved the problem.
+              </p>
 
-          <article class="timeline-item">
-
-            <span class="timeline-dot"></span>
-
-            <span class="timeline-year">
-              SERIES ORGANIZER 1 & 2
-            </span>
-
-            <h3>A tracker becomes an application.</h3>
-
-            <p>
-              The first versions brought add/remove controls,
-              episode progression, archived shows, external links
-              and eventually themes.
-            </p>
-
-          </article>
+            </div>
 
 
-          <article class="timeline-item">
+            <figure class="history-screenshot">
 
-            <span class="timeline-dot"></span>
+              <div class="history-window">
 
-            <span class="timeline-year">
-              SERIES ORGANIZER 3
-            </span>
+                <img
+                  src="assets/history/series-organizer-1.jpg"
+                  alt="Series Organizer 1"
+                />
 
-            <h3>The outside world arrives.</h3>
+              </div>
 
-            <p>
-              Online metadata transformed the application:
-              series and episode information, air dates, images,
-              languages, subtitles and Specials became part of SO.
-            </p>
+              <figcaption>
+                Series Organizer 1
+              </figcaption>
+
+            </figure>
 
           </article>
 
 
-          <article class="timeline-item">
+          <!-- V2 -->
 
-            <span class="timeline-dot"></span>
+          <article class="history-generation history-generation-reverse">
 
-            <span class="timeline-year">
-              SERIES ORGANIZER 4 & 5
-            </span>
+            <div class="history-copy">
 
-            <h3>A modernized desktop generation.</h3>
+              <span class="history-version">
+                SERIES ORGANIZER 2
+              </span>
 
-            <p>
-              The interface evolved again, with dynamic series and
-              episode presentation, richer title information and
-              RSS integration.
-            </p>
+              <h3>
+                It starts becoming Series Organizer.
+              </h3>
+
+              <p>
+                The second generation began moving beyond the
+                spreadsheet-like beginnings.
+              </p>
+
+              <p>
+                A proper toolbar, visual controls, themes and
+                more options started shaping the personality
+                of the application.
+              </p>
+
+            </div>
+
+
+            <figure class="history-screenshot">
+
+              <div class="history-window">
+
+                <img
+                  src="assets/history/series-organizer-2.jpg"
+                  alt="Series Organizer 2"
+                />
+
+              </div>
+
+              <figcaption>
+                Series Organizer 2
+              </figcaption>
+
+            </figure>
 
           </article>
 
 
-          <article class="timeline-item">
+          <!-- V3 -->
 
-            <span class="timeline-dot"></span>
+          <article class="history-generation">
 
-            <span class="timeline-year">
-              NOW
-            </span>
+            <div class="history-copy">
 
-            <h3>Series Organizer+</h3>
+              <span class="history-version">
+                SERIES ORGANIZER 3
+              </span>
 
-            <p>
-              Rebuilt for a new generation around Movies and TV,
-              modern Android development, local-first tracking,
-              discovery and optional cloud features.
-            </p>
+              <h3>
+                The shows themselves enter the picture.
+              </h3>
+
+              <p>
+                Series Organizer began pulling in richer
+                information: episodes, air dates, descriptions,
+                artwork and online metadata.
+              </p>
+
+              <p>
+                It was no longer only about remembering a number.
+                The tracker was becoming a place to explore the
+                shows themselves.
+              </p>
+
+            </div>
+
+
+            <figure class="history-screenshot">
+
+              <div class="history-window">
+
+                <img
+                  src="assets/history/series-organizer-3.jpg"
+                  alt="Series Organizer 3"
+                />
+
+              </div>
+
+              <figcaption>
+                Series Organizer 3
+              </figcaption>
+
+            </figure>
 
           </article>
+
+
+          <!-- V4 -->
+
+          <article class="history-generation history-generation-reverse">
+
+            <div class="history-copy">
+
+              <span class="history-version">
+                SERIES ORGANIZER 4
+              </span>
+
+              <h3>
+                A new visual identity takes shape.
+              </h3>
+
+              <p>
+                Dark surfaces, artwork, actors, episode
+                information and orange highlights became part
+                of the Series Organizer identity.
+              </p>
+
+              <p>
+                The project had grown from a tracker into a
+                much richer desktop companion for television.
+              </p>
+
+            </div>
+
+
+            <figure class="history-screenshot">
+
+              <div class="history-window">
+
+                <img
+                  src="assets/history/series-organizer-4.png"
+                  alt="Series Organizer 4"
+                />
+
+              </div>
+
+              <figcaption>
+                Series Organizer 4
+              </figcaption>
+
+            </figure>
+
+          </article>
+
+
+          <!-- V5 -->
+
+          <article class="history-generation">
+
+            <div class="history-copy">
+
+              <span class="history-version">
+                SERIES ORGANIZER 5
+              </span>
+
+              <h3>
+                The final desktop generation.
+              </h3>
+
+              <p>
+                Series Organizer 5 brought together tracking,
+                artwork, cast information, discovery tools,
+                RSS, subtitles and years of experimentation.
+              </p>
+
+              <p>
+                Then development stopped.
+              </p>
+
+              <p class="history-emphasis">
+                The idea didn't.
+              </p>
+
+            </div>
+
+
+            <figure class="history-screenshot">
+
+              <div class="history-window">
+
+                <img
+                  src="assets/history/series-organizer-5.png"
+                  alt="Series Organizer 5"
+                />
+
+              </div>
+
+              <figcaption>
+                Series Organizer 5
+              </figcaption>
+
+            </figure>
+
+          </article>
+
+        </div>
+
+
+        <!-- THEN / NOW -->
+
+        <div class="then-now">
+
+          <div class="then-now-heading">
+
+            <span class="history-version">
+              THEN &amp; NOW
+            </span>
+
+            <h3>
+              Different generation. Same idea.
+            </h3>
+
+          </div>
+
+
+          <div class="then-now-grid">
+
+            <figure>
+
+              <div class="history-window">
+
+                <img
+                  src="assets/history/series-organizer-5.png"
+                  alt="Series Organizer 5 desktop application"
+                />
+
+              </div>
+
+              <figcaption>
+                Series Organizer 5
+              </figcaption>
+
+            </figure>
+
+
+            <div class="then-now-arrow">
+              →
+            </div>
+
+
+            <figure>
+
+              <div class="current-phone">
+
+                <img
+                  src="assets/screenshots/library.png"
+                  alt="Series Organizer+"
+                />
+
+              </div>
+
+              <figcaption>
+                Series Organizer+
+              </figcaption>
+
+            </figure>
+
+          </div>
+
+
+          <p class="then-now-copy">
+            Years later, Series Organizer returns —
+            rebuilt from the ground up for Movies &amp; TV,
+            modern platforms and a much bigger vision.
+          </p>
 
         </div>
 
@@ -1919,7 +2298,7 @@
 
         <p>
           Series Organizer+ isn't finished.
-          The current application is being used, tested,
+          The application is being used, tested,
           changed and refined as development continues.
         </p>
 
@@ -1975,8 +2354,6 @@
   </main>
 
 
-  <!-- OLD-SO COLOR STRIP -->
-
   <div class="legacy-strip">
     <span></span>
     <span></span>
@@ -1985,8 +2362,6 @@
     <span></span>
   </div>
 
-
-  <!-- FOOTER -->
 
   <footer>
 
