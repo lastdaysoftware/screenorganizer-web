@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://seriesorganizer-web.lastdaysoftware.workers.dev/sitemap.xml
+Sitemap: https://seriesorganizer.com/sitemap.xml
