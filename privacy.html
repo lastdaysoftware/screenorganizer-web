@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#111111" />
+<link rel="icon" type="image/svg+xml" href="assets/brand/icon_master.svg" />
+<link rel="alternate icon" type="image/png" href="assets/brand/icon_play_store_512.png" />
+<link rel="stylesheet" href="styles.css" />
+  <title>Privacy Policy — Series Organizer+</title>
+  <meta name="description" content="Privacy Policy for Series Organizer+, an Android app by Last Day Software." />
+</head>
+<body>
+  <header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="index.html" aria-label="Series Organizer+ home">
+      <img class="brand-icon" src="assets/brand/series-organizer-plus-mark-dark.svg" alt="" />
+      <div class="brand-text">
+        <strong>Series Organizer+</strong>
+        <small>Movies &amp; TV, organized.</small>
+      </div>
+    </a>
+    <nav class="main-nav" aria-label="Main navigation">
+      <a href="index.html#features">Features</a>
+      <a href="index.html#discover">Discover</a>
+      <a href="index.html#legacy">Our story</a>
+      <a href="index.html#development">Development</a>
+    </nav>
+  </div>
+</header>
+
+  <main class="policy-page">
+    <div class="container policy-container">
+      <a class="policy-back" href="index.html">← Series Organizer+</a>
+      <p class="section-label">PRIVACY</p>
+      <h1>Privacy Policy</h1>
+      <p class="policy-updated">Last updated: September 14, 2026</p>
+
+      <section>
+        <h2>About this policy</h2>
+        <p>
+          Series Organizer+ is an Android application by Last Day Software for organizing
+          and tracking movies and TV shows. It is local-first and works without an account.
+        </p>
+      </section>
+
+      <section>
+        <h2>Data stored locally on your device</h2>
+        <p>Local device data may include:</p>
+        <ul>
+          <li>Library membership</li>
+          <li>Movie watch counts</li>
+          <li>TV-show and episode tracking</li>
+          <li>Favorites and archived state</li>
+          <li>User preferences</li>
+          <li>Notification and synchronization preferences</li>
+          <li>Cached TMDB metadata and artwork references</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Optional Google sign-in</h2>
+        <p>
+          Optional Google sign-in is implemented through Google OAuth and Supabase
+          authentication. An account is not required to use the local Library.
+        </p>
+        <p>
+          Authentication tokens are stored locally using Android Keystore-backed encryption
+          and are excluded from Android backup.
+        </p>
+      </section>
+
+      <section>
+        <h2>Manual Cloud Backup</h2>
+        <p>
+          Cloud Backup v1 is manual, not automatic. A backup is uploaded only when you
+          explicitly request one.
+        </p>
+
+        <p>Cloud backups may contain:</p>
+        <ul>
+          <li>Library membership</li>
+          <li>Movie tracking</li>
+          <li>TV-show tracking</li>
+          <li>Episode tracking</li>
+        </ul>
+
+        <p>Cloud backups exclude:</p>
+        <ul>
+          <li>TMDB metadata and caches</li>
+          <li>Person data</li>
+          <li>Posters and other artwork</li>
+          <li>Analytics preferences</li>
+          <li>General app/device preferences</li>
+          <li>Notification permissions and schedules</li>
+          <li>Authentication tokens</li>
+        </ul>
+
+        <p>
+          The backend stores at most the five newest immutable backup snapshots per account.
+          Supabase is currently deployed in EU West.
+        </p>
+      </section>
+
+      <section>
+        <h2>Optional Firebase Analytics</h2>
+        <p>
+          Firebase Analytics is disabled by default and is enabled only through explicit
+          user opt-in.
+        </p>
+
+        <p>When enabled, it may collect:</p>
+        <ul>
+          <li>A pseudonymous app-instance identifier</li>
+          <li>App lifecycle and session activity</li>
+          <li>Coarse geographical information</li>
+          <li>Device/platform information</li>
+          <li>Library movie and TV-show counts</li>
+        </ul>
+
+        <p>
+          Firebase Analytics does not receive media titles, searches, biographies,
+          email addresses, authentication tokens or watch-history records.
+          Advertising identifiers and personalization are disabled.
+        </p>
+      </section>
+
+      <section>
+        <h2>Services used</h2>
+        <ul>
+          <li><strong>TMDB</strong> — movie, TV, episode, Person, artwork, video and provider metadata.</li>
+          <li><strong>JustWatch</strong> — streaming-availability attribution supplied through TMDB.</li>
+          <li><strong>Supabase</strong> — optional Google authentication and cloud backup.</li>
+          <li><strong>Google OAuth</strong> — optional authentication.</li>
+          <li><strong>Google / Firebase</strong> — optional analytics after user opt-in.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Transmission and international processing</h2>
+        <p>
+          Supported network services are accessed over encrypted HTTPS connections.
+          Some third-party services may process information outside your country or region
+          according to their own infrastructure and privacy terms.
+        </p>
+      </section>
+
+      <section>
+        <h2>Retention</h2>
+        <p>
+          Local app data remains on the device until it is removed through app functionality,
+          Android storage controls, or uninstall behavior.
+        </p>
+        <p>
+          Cloud Backup retains at most the five newest immutable snapshots associated with
+          an account. Deleting the Series Organizer+ Supabase authentication account
+          cascade-deletes its cloud backup snapshots.
+        </p>
+      </section>
+
+      <section>
+        <h2>Your privacy choices</h2>
+        <ul>
+          <li>Use Series Organizer+ without signing in.</li>
+          <li>Choose whether to create a manual cloud backup.</li>
+          <li>Choose whether optional Firebase Analytics is enabled.</li>
+          <li>Sign out of your Google-linked Series Organizer+ account.</li>
+          <li>Request deletion of your Series Organizer+ cloud account and backups.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Account and cloud-data deletion</h2>
+        <p>
+          See the <a href="account-deletion.html">Account deletion page</a> for the public
+          deletion pathway. Deleting a Series Organizer+ account does not delete your Google Account.
+        </p>
+      </section>
+
+      <section>
+        <h2>Children</h2>
+        <p>
+          Series Organizer+ is not specifically designed as a children's service.
+        </p>
+        <div class="policy-needed">
+          <h2>Information still needed</h2>
+          <p>
+            Last Day Software should confirm the final minimum-age / children-positioning
+            wording before publication.
+          </p>
+        </div>
+      </section>
+
+      <section>
+        <h2>Policy changes</h2>
+        <p>
+          This policy may be updated as Series Organizer+ changes or as its services and
+          data-handling practices evolve. The latest revision date will be shown on this page.
+        </p>
+      </section>
+
+      <section>
+        <h2>Contact</h2>
+        <p>
+          See the <a href="support.html">Support page</a>. A public support/privacy email
+          must be confirmed before publication.
+        </p>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <div class="footer-brand-row">
+        <img src="assets/brand/series-organizer-plus-mark-dark.svg" alt="" />
+        <div>
+          <strong>Series Organizer+</strong>
+          <small>Movies &amp; TV, organized.</small>
+        </div>
+      </div>
+      <p>A Last Day Software project.</p>
+    </div>
+
+    <nav class="footer-links" aria-label="Footer navigation">
+      <a href="privacy.html">Privacy</a>
+      <a href="account-deletion.html">Account deletion</a>
+      <a href="support.html">Support</a>
+    </nav>
+  </div>
+</footer>
+</body>
+</html>

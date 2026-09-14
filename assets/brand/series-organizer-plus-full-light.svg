@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1020 310" role="img" aria-label="Series Organizer+ full logo">
+ <g id="brand-mark" transform="translate(-55 -57) scale(3.6)">
+    <g fill="#1E1E1E">
+      <rect x="39.5" y="20.5" width="5.5" height="17" rx="2.75" transform="rotate(-45 42.25 29)"/>
+      <rect x="57.5" y="20.5" width="5.5" height="17" rx="2.75" transform="rotate(45 60.25 29)"/>
+      <path fill-rule="evenodd" d="M31 32h38a8 8 0 0 1 8 8v24a8 8 0 0 1-8 8H31a8 8 0 0 1-8-8V40a8 8 0 0 1 8-8Zm0 5a3 3 0 0 0-3 3v24a3 3 0 0 0 3 3h38a3 3 0 0 0 3-3V40a3 3 0 0 0-3-3H31Z"/>
+      <rect x="59" y="44.5" width="11" height="4.5" rx="2.25"/>
+      <rect x="59" y="52.75" width="11" height="4.5" rx="2.25"/>
+      <rect x="59" y="61" width="11" height="4.5" rx="2.25"/>
+      <rect x="74.5" y="66" width="6" height="20" rx="3"/>
+      <rect x="67.5" y="73" width="20" height="6" rx="3"/>
+    </g>
+
+    <g fill="#FF8A00">
+      <polygon points="33,44 33,64 49,54"/>
+      <circle cx="54" cy="46.75" r="2.5"/>
+      <circle cx="54" cy="55" r="2.5"/>
+      <circle cx="54" cy="63.25" r="2.5"/>
+    </g>
+  </g>
+
+  <g id="brand-wordmark" transform="translate(225 0)">
+    <g id="series-text">
+      <text
+        x="24"
+        y="104"
+        fill="#1E1E1E"
+        font-family="Montserrat, Arial, sans-serif"
+        font-size="92"
+        font-weight="800"
+        letter-spacing="-2"
+      >Series</text>
+    </g>
+
+    <g id="organizer-text">
+      <text
+        x="24"
+        y="198"
+        fill="#FF8A00"
+        font-family="Montserrat, Arial, sans-serif"
+        font-size="92"
+        font-weight="800"
+        letter-spacing="-2"
+      >Organizer+</text>
+    </g>
+
+    <g id="tagline-text">
+      <text
+        x="28"
+        y="262"
+        fill="#6B6B6B"
+        font-family="Montserrat, Arial, sans-serif"
+        font-size="34"
+        font-weight="500"
+        letter-spacing="0"
+      >Movies &amp; TV, organized.</text>
+    </g>
+  </g>
+</svg>
