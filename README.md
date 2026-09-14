@@ -32,13 +32,10 @@ Historical Series Organizer screenshots are under `assets/history/`.
 
 Before Google Play / OAuth publication:
 
-1. Confirm the public support/privacy email or support form.
-2. Finalize the secure account-deletion request workflow.
-3. Confirm account-verification steps for deletion requests.
-4. Confirm expected deletion handling time.
-5. Confirm age/minimum-age positioning.
-6. Review any legally required retention exceptions.
-7. Prefer a stable custom domain before final production configuration.
-8. Verify `privacy.html` and `account-deletion.html` open directly after deployment.
+1. Complete and test the authenticated in-app account-deletion workflow.
+2. Confirm the Google Play target-audience selections match the published children wording.
+3. Add an approved TMDB logo alongside the required attribution notice.
+4. Prefer a stable custom domain before final production configuration, then update canonical and social URLs.
+5. Verify `privacy.html`, `support.html`, and `account-deletion.html` open directly after deployment.
 
 The site remains static and contains no cookies, analytics, forms, or JavaScript.

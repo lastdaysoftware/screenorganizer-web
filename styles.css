@@ -815,6 +815,16 @@ footer {
   font-size: 0.82rem;
 }
 
+.footer-brand .tmdb-attribution {
+  max-width: 590px;
+  font-size: 0.72rem;
+  line-height: 1.55;
+}
+
+.tmdb-attribution a {
+  color: var(--orange-light);
+}
+
 /* Responsive */
 
 @media (max-width: 850px) {
@@ -907,5 +917,19 @@ footer {
 
   .brand-text small {
     display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }
