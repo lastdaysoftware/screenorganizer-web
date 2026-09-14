@@ -1,6 +1,6 @@
 # Series Organizer+ website
 
-Static website for Series Organizer+ by Last Day Software.
+Static website for Series Organizer+ by LastDay Software.
 
 ## Pages
 
